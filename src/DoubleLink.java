@@ -15,22 +15,22 @@ public class DoubleLink {
 		next=null;
 	}
 	
-	public DoubleLink(Object newItem, DoubleLink precedeLink, DoubleLink nextLink){
+	public DoubleLink(Object newItem, DoubleLink newPrecede, DoubleLink newNext){
 		item=newItem;
-		precede=precedeLink;
-		next=nextLink;
+		precede=newPrecede;
+		next=newNext;
 	}
 	
 	public void setItem(Object newItem){
 		item=newItem;
 	}
 	
-	public void setNext(DoubleLink nextLink){
-		next=nextLink;
+	public void setNext(DoubleLink newNext){
+		next=newNext;
 	}
 	
-	public void setPrecede(DoubleLink precedeLink){
-		precede=precedeLink;
+	public void setPrecede(DoubleLink newPrecede){
+		precede=newPrecede;
 	}
 	
 	public Object getItem(){
