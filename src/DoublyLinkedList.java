@@ -6,7 +6,7 @@ public class DoublyLinkedList {
 	DoubleLink nextLink;
 	DoubleLink newNode;
 	
-	public boolean search(Object item){
+	public boolean contains(Object item){
 		curr=head;
 		
 		boolean status=false;

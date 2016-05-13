@@ -17,8 +17,8 @@ public class SinglyLinkedList {
 	
 	public boolean insertBefore(Object location, Object newItem){ 
 		// Insert "between" (prev and curr)
-		if(search(location)){
-			// Alternative_1: Make us of search(item) method
+		if(contains(location)){
+			// Alternative_1: Make us of contains(item) method
 			newNode=new Node(newItem);
 			if(head==null){
 				//There is not LinkedList to begin with
@@ -35,7 +35,7 @@ public class SinglyLinkedList {
 		}else{
 			return false;
 		}
-		//Alternative_2: Do not make use of search(location) method
+		//Alternative_2: Do not make use of contains(location) method
 		/*
 		curr=head;
 		prev=null;
@@ -55,7 +55,7 @@ public class SinglyLinkedList {
 	
 	public boolean insertAfter(Object location, Object newItem){ 
 		// Insert "between" (curr and next)
-		if(search(location)){
+		if(contains(location)){
 			newNode=new Node(newItem);
 			if(head==null){
 				head=newNode;
@@ -74,7 +74,7 @@ public class SinglyLinkedList {
 			return false;
 		}
 		
-		// Alternative_2: Do not make use of search(location) method
+		// Alternative_2: Do not make use of contains(location) method
 		/*
 		curr=head;
 		prev=null;
@@ -109,7 +109,7 @@ public class SinglyLinkedList {
 		}
 	}
 	
-	public boolean search(Object item){
+	public boolean contains(Object item){
 		// Note that == does not work if the passed in values are Double or Float
 		boolean status=false;
 		curr=head;
@@ -129,7 +129,7 @@ public class SinglyLinkedList {
 	}
 	
 	public boolean delete(Object item){
-		if(search(item)){
+		if(contains(item)){
 			if(prev==null){
 				// location to delete is at head
 				curr=curr.getNext();
@@ -158,7 +158,7 @@ public class SinglyLinkedList {
 		}
 	}
 	
-	//uncomment this code to test all methods
+	//Uncomment this code to test all methods
 	/*
 	public static void main(String[] args){
 		SinglyLinkedList n=new SinglyLinkedList();
@@ -176,8 +176,8 @@ public class SinglyLinkedList {
 		n.add(3);
 		n.showData();
 		System.out.println();
-		//search
-		System.out.println("search for "+key+", Search result: "+n.search(key));
+		//contains
+		System.out.println("contains for "+key+", contains result: "+n.contains(key));
 		System.out.println();
 		//delete
 		System.out.println("delete "+key+", Delete result: "+n.delete(key));
